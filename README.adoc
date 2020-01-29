@@ -1,0 +1,6 @@
+= VSHN Docker image for Nginx and ModSecurity
+
+This Docker image is based in the https://hub.docker.com/r/centos/nginx-18-centos7[centos/nginx-18-centos7] image which is compatible with OpenShift.
+
+The build process is adapted from ModSecurity's official https://github.com/CRS-support/modsecurity-docker/blob/v3/nginx-nginx/Dockerfile[Dockerfile] .
+
