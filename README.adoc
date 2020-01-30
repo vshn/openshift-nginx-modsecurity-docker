@@ -28,3 +28,7 @@ docker run --network host  \
     --env-file=middle_proxy_test.env \
     vshn/openshift-nginx-modsecurity
 ```
+
+```bash
+curl http://localhost:4000/nginx-health
+````
