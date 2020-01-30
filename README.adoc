@@ -4,3 +4,27 @@ This Docker image is based in the https://hub.docker.com/r/centos/nginx-114-cent
 
 The build process is adapted from ModSecurity's official https://github.com/CRS-support/modsecurity-docker/blob/v3/nginx-nginx/Dockerfile[Dockerfile] .
 
+== How to use this image:
+
+```bash
+docker pull vshn/openshift-nginx-modsecurity
+```
+
+== How to build  this image:
+```bash
+docker build . -t vshn/openshift-nginx-modsecurity
+```
+
+== Environment Configuration Options
+
+ROUTER_PROXY_IN_HTTP_PORT::
+    Setup a listener on this TCP port to receive input requests
+ROUTER_PROXY_OUT_HTTP_PORT
+    Requests the passed filtering will be sent to this TCP port
+
+== Testing the Middle Proxy feature
+```bash
+docker run --network host  \
+    --env-file=middle_proxy_test.env \
+    vshn/openshift-nginx-modsecurity
+```

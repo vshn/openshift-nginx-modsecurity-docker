@@ -49,4 +49,7 @@ COPY --from=build /etc/nginx/modules/ngx_http_modsecurity_module.so /etc/nginx/m
 # forward request and error logs to docker log collector
 RUN  ln -sf /dev/stdout /var/log/nginx/access.log  && \
     ln -sf /dev/stderr /var/log/nginx/error.log
+
+COPY docker-entrypoint.sh /usr/local/bin/
+ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["nginx", "-g", "daemon off;"]
