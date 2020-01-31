@@ -15,12 +15,15 @@ docker pull vshn/openshift-nginx-modsecurity
 docker build . -t vshn/openshift-nginx-modsecurity
 ```
 
-== Environment Configuration Options
+== Environment Configuration Options (Middle Proxy Only)
 
+The following variables MUST be con
 ROUTER_PROXY_IN_HTTP_PORT::
     Setup a listener on this TCP port to receive input requests
 ROUTER_PROXY_OUT_HTTP_PORT
     Requests the passed filtering will be sent to this TCP port
+ROUTER_PROXY_MODSECURITY_RULES_FILE:
+    Filename containing the modsecurity rules
 
 == Testing the Middle Proxy feature
 ```bash
