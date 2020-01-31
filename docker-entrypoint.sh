@@ -8,7 +8,8 @@ server {
     location /nginx-health {
         return 200 "healthy\n";
     }
-        location / {
+    location / {
+        proxy_set_header Host \$host;
         proxy_pass http://127.0.0.1:${ROUTER_PROXY_OUT_HTTP_PORT}/;
     }
 }
